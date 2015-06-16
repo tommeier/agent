@@ -80,8 +80,6 @@
     <dict>
       <key>BUILDKITE_AGENT_TOKEN</key>
       <string>your-agent-access-token</string>
-      <key>BUILDKITE_AGENT_NAME</key>
-      <string>your-agent-name</string>
       <key>BUILDKITE_AGENT_META_DATA</key>
       <string>your-agent-meta-data</string>
     </dict>
