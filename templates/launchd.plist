@@ -18,14 +18,14 @@
     sudo sed -i '' "s/your-agent-access-token/[insert agent access token here]/g" /Library/LaunchAgents/io.buildkite.buildkite-agent.plist
 
     # Create the agent's log directory with permissions for your user
-    mkdir -p ~/.buildkite/log
-    sudo chmod 775 ~/.buildkite/log
+    mkdir -p ~/.buildkite-agent/log
+    sudo chmod 775 ~/.buildkite-agent/log
 
     # Add it to launchd (which also starts buildkite-agent)
     launchctl load /Library/LaunchAgents/io.buildkite.buildkite-agent.plist
 
     # Check the logs
-    tail -f ~/.buildkite/log/buildkite-agent.log
+    tail -f ~/.buildkite-agent/log/buildkite-agent.log
 
     # Troubleshooting
     If you're setting up a new user for your buildkite-agent, the agent may stall on the first attempt of cloning code from your code host.
@@ -50,7 +50,7 @@
 
     <key>ProgramArguments</key>
     <array>
-      <string>/Users/your-build-user/.buildkite/bin/buildkite-agent</string>
+      <string>/Users/your-build-user/.buildkite-agent/bin/buildkite-agent</string>
       <string>start</string>
     </array>
 
